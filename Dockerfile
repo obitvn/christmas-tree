@@ -31,10 +31,10 @@ COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/public ./public
 
 # Expose port
-EXPOSE 8080
+EXPOSE 8123
 
 # Set environment to production
 ENV NODE_ENV=production
 
 # Run with Vite preview server
-CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0", "--port", "8123"]
