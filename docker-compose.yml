@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  christmas-tree:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: christmas-tree-app
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    # If you need webcam access, add device configuration
+    # devices:
+    #   - /dev/video0:/dev/video0

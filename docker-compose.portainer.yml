@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  christmas-tree:
+    image: christmas-tree-app:latest
+    container_name: christmas-tree-web
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - TZ=Asia/Ho_Chi_Minh
