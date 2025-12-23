@@ -12,5 +12,5 @@ services:
     environment:
       - NODE_ENV=production
     # If you need webcam access, add device configuration
-    # devices:
-    #   - /dev/video0:/dev/video0
+    devices:
+      - /dev/video0:/dev/video0
