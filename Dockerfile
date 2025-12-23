@@ -1,12 +1,22 @@
-  FROM node:20-alpine
+# Christmas Tree - Enhanced Edition
+FROM node:20-alpine
 
-  WORKDIR /app
+WORKDIR /app
 
-  COPY package.json package-lock.json ./
-  RUN npm install
-  COPY . .
+# Copy package files
+COPY package.json package-lock.json ./
 
-  EXPOSE 8080
-  ENV NODE_ENV=production
+# Install all dependencies
+RUN npm install
 
-  CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "8123"]
+# Copy source code
+COPY . .
+
+# Expose port
+EXPOSE 8080
+
+# Set environment to production
+ENV NODE_ENV=production
+
+# Run with Vite dev server on port 8080
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "8080"]
